@@ -27,7 +27,6 @@ export LANG="$LC_ALL"
 
 source ~/.aliases.zshrc
 source ~/.path.zshrc
-source ~/.android.zshrc
 source ~/.go.zshrc
 
 export GPG_TTY=$(tty)
