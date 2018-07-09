@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Form evilsocket dofiles
+# From evilsocket dofiles
 
 PACKAGES=( 
   htop 
