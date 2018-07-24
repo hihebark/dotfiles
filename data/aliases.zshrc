@@ -13,3 +13,4 @@ alias ytdlmp3='youtube-dl --extract-audio --audio-format mp3 $1'
 alias searchsploit='~/ToolGit/exploit-database/searchsploit'
 alias jadx='~/ToolGit/jadx/build/jadx/bin/jadx-gui /ToolGit/jadx/build/jadx/lib/jadx-core-*.jar'
 alias aptgrad='sudo apt-get update && sudo apt-get upgrade'
+alias tmux="TERM=screen-256color-bce tmux"
