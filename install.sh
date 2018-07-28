@@ -44,6 +44,7 @@ git clone https://github.com/fatih/vim-go ~/.vim/bundle/vim-go
 git clone https://github.com/terryma/vim-multiple-cursors ~/.vim/bundle/vim-multiple-cursors
 
 vim +BundleInstall +GoInstallBinaries +qa
+
 echo "[#] Installing go ..."
 cd ~/Downloads
 wget -c $(curl -s https://golang.org/dl/ | grep "download downloadBox" | grep "linux" | awk -F '"' '{print $4}')
