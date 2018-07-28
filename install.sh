@@ -2,6 +2,9 @@
 
 # From evilsocket dofiles
 
+bold=$(tput bold)
+norm=$(tput sgr0)
+
 PACKAGES=( 
   htop 
   cryptsetup
@@ -20,6 +23,8 @@ PACKAGES=(
 
 echo " > sudo apt-get install ${bold}${PACKAGES[*]}${norm} -y"
 
+chsh -s /usr/bin/zsh
+
 for file in data/*
 do
     echo "Linking $file to ${bold}~/.$(basename $file)${norm} ..."
@@ -30,3 +35,5 @@ done
 if [ ! -d ./data/vim/bundle/vundle ]; then
     git clone http://github.com/gmarik/vundle.git ./data/vim/bundle/vundle
 fi
+
+vim +BundleInstall +GoInstallBinaries +qa
