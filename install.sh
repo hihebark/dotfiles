@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # From evilsocket dofiles
 
 bold=$(tput bold)
@@ -18,11 +17,10 @@ PACKAGES=(
   tmux
   build-essential 
   libpcap-dev
-  grive
 )
 
 echo " > sudo apt-get install ${bold}${PACKAGES[*]}${norm} -y"
-
+read 
 chsh -s /usr/bin/zsh
 
 for file in data/*
@@ -35,5 +33,14 @@ done
 if [ ! -d ./data/vim/bundle/vundle ]; then
     git clone http://github.com/gmarik/vundle.git ./data/vim/bundle/vundle
 fi
+
+git clone https://github.com/Shougo/neocomplete.vim ~/.vim/bundle/neocomplete.vim
+git clone https://github.com/scrooloose/nerdtree ~/.vim/bundle/nerdtree
+git clone https://github.com/Xuyuanp/nerdtree-git-plugin ~/.vim/bundle/nerdtree-git-plugin
+git clone https://github.com/octref/RootIgnore ~/.vim/bundle/RootIgnore
+git clone https://github.com/majutsushi/tagbar ~/.vim/bundle/tagbar
+git clone https://github.com/ryanoasis/vim-devicons ~/.vim/bundle/vim-devicons
+git clone https://github.com/fatih/vim-go ~/.vim/bundle/vim-go
+git clone https://github.com/terryma/vim-multiple-cursors ~/.vim/bundle/vim-multiple-cursors
 
 vim +BundleInstall +GoInstallBinaries +qa
