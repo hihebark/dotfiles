@@ -40,6 +40,8 @@ set t_Co=256
 " set theme
 set background=dark 
 colorscheme hybrid
+" ctrlp
+set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 " http://vim.wikia.com/wiki/VimTip102
 set omnifunc=syntaxcomplete#Complete
