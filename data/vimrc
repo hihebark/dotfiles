@@ -153,7 +153,7 @@ Bundle 'scrooloose/nerdtree'
     " Single click to open files and expand folders.
     let NERDTreeMouseMode = 3
     " Display hidden files
-    " let NERDTreeShowHidden=1
+    let NERDTreeShowHidden=1
     " Do not display these files
     " let NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp']
 
