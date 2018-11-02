@@ -184,6 +184,8 @@ Bundle 'ryanoasis/vim-devicons'
     let g:WebDevIconsUnicodeDecorateFolderNodes = 1
     let g:DevIconsEnableFoldersOpenClose = 1
     let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+" Typescript
+Bundle 'leafgarland/typescript-vim'
 
 " A much better statusline
 Bundle 'Lokaltog/vim-powerline'
