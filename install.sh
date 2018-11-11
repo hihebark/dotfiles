@@ -56,13 +56,13 @@ GettingGO(){
 }
 echo "[#] sudo apt install ${bold}${PACKAGES[*]}${norm} -y"
 read 
-#chsh -s /usr/bin/zsh
-#SettingVim
-#SettingThemeAndIcons
+chsh -s /usr/bin/zsh
+SettingVim
+SettingThemeAndIcons
 for file in data/*
 do
     echo "[#] Linking ${file} to ${bold}~/.$(basename $file)${norm} ..."
     rm -rf ~/.$(basename "${file}")
     ln -s $(pwd)/"${file}" ~/.$(basename "${file}")
 done
-#GettingGO
+GettingGO
