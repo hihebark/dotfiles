@@ -41,7 +41,7 @@ set background=dark
 colorscheme hybrid
 " ctrlp
 set runtimepath^=~/.vim/bundle/ctrlp.vim
-
+set runtimepath^=~/.vim/bundle/node
 " http://vim.wikia.com/wiki/VimTip102
 set omnifunc=syntaxcomplete#Complete
 inoremap <tab> <c-r>=Smart_TabComplete()<CR>
@@ -102,7 +102,8 @@ augroup END
 
 " force two spaces indentation for html, ruby and python files
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
-autocmd Filetype ts setlocal ts=2 sts=2 sw=2
+autocmd Filetype typescript setlocal ts=2 sts=2 sw=2
+autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 autocmd Filetype eruby setlocal ts=2 sts=2 sw=2
 autocmd Filetype c setlocal ts=2 sts=2 sw=2
@@ -122,7 +123,8 @@ augroup filetypedetect
     au BufRead,BufNewFile *.zr set filetype=c
     au BufRead,BufNewFile *.yy set filetype=cpp
     au BufRead,BufNewFile *.rl set filetype=cpp
-    au BufNewFile,BufRead *.ts setlocal filetype=typescript
+    au BufRead,BufNewFile *.ts setlocal filetype=typescript
+    au BufRead,BufNewFile *.js setlocal filetype=javascript
 augroup END
 
 " Initialize vundle runtime
@@ -186,6 +188,7 @@ Bundle 'ryanoasis/vim-devicons'
     let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 " Typescript
 Bundle 'leafgarland/typescript-vim'
+    let g:typescript_indent_disable = 1
 Bundle "quramy/tsuquyomi"
 
 " A much better statusline
