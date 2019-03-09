@@ -11,7 +11,7 @@ local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 HOST=$(hostname -s)
 #HOSTNAME=$(whoami)
 #
-PROMPT='$(virtualenv_prompt_info)%{[03m%}%{$fg_bold[red]%}% $USER::%{$fg[green]%}%c$(git_prompt_info)%{$fg[red]%}%(!.#.$)%{$reset_color%} '
+PROMPT='$(virtualenv_prompt_info)%{$fg_bold[red]%}% $USER%{$fg[yellow]%}:⚡%{$fg[green]%}%c$(git_prompt_info)%{$fg[red]%}%(!.#.$)%{$reset_color%} '
 PROMPT2='%{$fg[red]%}\%{$reset_color%}'
 RPS1='%{$fg[yellow]%}%~%{$reset_color%} ${return_code} '
 
