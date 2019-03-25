@@ -29,6 +29,7 @@ set tags=tags;
 set mouse=a
 set clipboard=unnamedplus
 set encoding=UTF-8
+set cc=80                      " Display line of margin 80
 " use separate folders for swap files
 set backupdir=~/.vim/backup/
 set directory=~/.vim/swap/
