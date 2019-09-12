@@ -24,14 +24,19 @@ ZSH_THEME_VIRTUAL_ENV_PROMPT_SUFFIX="!%{$reset_color%} "
 
 export LC_ALL=en_US.utf-8
 export LANG="$LC_ALL"
+export GPG_TTY=$(tty)
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
 
 source ~/.aliases.zshrc
 source ~/.path.zshrc
 source ~/.go.zshrc
+source $HOME/.rvm/scripts/rvm
 
-export GPG_TTY=$(tty)
 
 cheat(){curl "http://cheat.sh/$1"}
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+
+# tabtab source for electron-forge package
+# uninstall by removing these lines or running `tabtab uninstall electron-forge`
+[[ -f /home/fauxcon/Workspace/nodejs/uuider/node_modules/tabtab/.completions/electron-forge.zsh ]] && . /home/fauxcon/Workspace/nodejs/uuider/node_modules/tabtab/.completions/electron-forge.zsh
