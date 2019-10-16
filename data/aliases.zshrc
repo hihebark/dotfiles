@@ -8,7 +8,8 @@ alias wgetc='wget -c $1'
 alias ytdlmp3='youtube-dl --extract-audio --audio-format mp3 $1'
 alias aptgrad='sudo apt update && sudo apt upgrade'
 alias tmux='TERM=screen-256color-bce tmux'
-alias poopush='git add . && git commit -m "poopush" && git push'
+alias poopush='git add . && git commit -m "small fixes or logging..." && git push'
+alias scanoid='ip neigh show nud reachable'
 
 ##### Tool
 alias hashcat='~/Tool/hashcat/hashcat'
