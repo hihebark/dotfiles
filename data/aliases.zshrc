@@ -10,6 +10,7 @@ alias aptgrad='sudo apt update && sudo apt upgrade'
 alias tmux='TERM=screen-256color-bce tmux'
 alias poopush='git add . && git commit -m "small fixes or logging..." && git push'
 alias scanoid='ip neigh show nud reachable'
+alias exgrep='grep --exclude-dir={node_modules,dist}'
 
 ##### Tool
 alias hashcat='~/Tool/hashcat/hashcat'
