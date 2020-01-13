@@ -34,7 +34,9 @@ set cc=80                      " Display line of margin 80
 set backupdir=~/.vim/backup/
 set directory=~/.vim/swap/
 set undodir=~/.vim/undo/
-
+" Enable list
+":set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:·
+":set list
 " Force terminal to 256 colors
 set t_Co=256
 " set theme
@@ -205,6 +207,7 @@ Bundle "terryma/vim-multiple-cursors"
 " Vim for Go
 Bundle 'fatih/vim-go'
     let g:go_fmt_autosave = 1
+    let g:go_version_warning = 0 " to remove the warning.
 
 " TagBar
 Bundle 'majutsushi/tagbar'

@@ -9,8 +9,9 @@ alias ytdlmp3='youtube-dl --extract-audio --audio-format mp3 $1'
 alias aptgrad='sudo apt update && sudo apt upgrade'
 alias tmux='TERM=screen-256color-bce tmux'
 alias poopush='git add . && git commit -m "small fixes or logging..." && git push'
-alias scanoid='ip neigh show nud reachable'
+alias scanoid='ip neigh | grep -v "FAILED"'
 alias exgrep='grep --exclude-dir={node_modules,dist}'
+alias endbep='beep -f 1000 -n -f 2000 -n -f 1500 -n -f 1000'
 
 ##### Tool
 alias hashcat='~/Tool/hashcat/hashcat'
