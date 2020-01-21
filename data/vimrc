@@ -40,11 +40,14 @@ set undodir=~/.vim/undo/
 " Force terminal to 256 colors
 set t_Co=256
 " set theme
-set background=dark 
+set background=dark
 colorscheme hybrid
+
 " ctrlp
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+" nodejs
 set runtimepath^=~/.vim/bundle/node
+
 " http://vim.wikia.com/wiki/VimTip102
 set omnifunc=syntaxcomplete#Complete
 inoremap <tab> <c-r>=Smart_TabComplete()<CR>
@@ -105,7 +108,6 @@ augroup END
 
 " force two spaces indentation for html, ruby and python files
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
-autocmd Filetype typescript setlocal ts=2 sts=2 sw=2
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 autocmd Filetype eruby setlocal ts=2 sts=2 sw=2
@@ -126,7 +128,6 @@ augroup filetypedetect
     au BufRead,BufNewFile *.zr set filetype=c
     au BufRead,BufNewFile *.yy set filetype=cpp
     au BufRead,BufNewFile *.rl set filetype=cpp
-    au BufRead,BufNewFile *.ts setlocal filetype=typescript
     au BufRead,BufNewFile *.js setlocal filetype=javascript
 augroup END
 
@@ -189,10 +190,9 @@ Bundle 'ryanoasis/vim-devicons'
     let g:WebDevIconsUnicodeDecorateFolderNodes = 1
     let g:DevIconsEnableFoldersOpenClose = 1
     let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-" Typescript
-Bundle 'leafgarland/typescript-vim'
-    let g:typescript_indent_disable = 1
-Bundle "quramy/tsuquyomi"
+
+Bundle 'ctrlpvim/ctrlp.vim'
+    
 
 " A much better statusline
 Bundle 'Lokaltog/vim-powerline'
@@ -207,13 +207,12 @@ Bundle "terryma/vim-multiple-cursors"
 " Vim for Go
 Bundle 'fatih/vim-go'
     let g:go_fmt_autosave = 1
-    let g:go_version_warning = 0 " to remove the warning.
 
 " TagBar
 Bundle 'majutsushi/tagbar'
-"autocmd FileType go nested :TagbarOpen
-"autocmd FileType go nmap <F5> :GoBuild<CR>
-"autocmd FileType go nmap <F6> :GoTest<CR>
+    autocmd FileType go nested :TagbarOpen
+    autocmd FileType go nmap <F5> :GoBuild<CR>
+    autocmd FileType go nmap <F6> :GoTest<CR>
 
 " Proper autocomplete
 Bundle 'Shougo/neocomplete.vim'
@@ -242,7 +241,9 @@ Bundle 'Shougo/neocomplete.vim'
 
 Bundle 'pangloss/vim-javascript'
     let g:javascript_plugin_jsdoc = 1
-"    set conceallevel=1
+
+Bundle 'moll/vim-node'
+
 " Plugin key-mappings.
 inoremap <expr><C-g>     neocomplete#undo_completion()
 inoremap <expr><C-l>     neocomplete#complete_common_string()
