@@ -17,23 +17,34 @@ PACKAGES=(
   tmux
   build-essential 
   libpcap-dev
+  weechat
+  gnupg2
+  sassc
+  inkscape
+  autoconf
+  libpcap-dev
 )
+
 SettingThemeAndIcons(){
-  echo "[#] Setting ${bold}arc Theme${norm} ..."
+  echo "[!] Setting ${bold}Arc Theme${norm} ..."
   sudo rm -rf /usr/share/themes/{Arc-Red,Arc-Red-Darker,Arc-Red-Dark}
   rm -rf ~/.local/share/themes/{Arc-Red,Arc-Red-Darker,Arc-Red-Dark}
   rm -rf ~/.themes/{Arc-Red,Arc-Red-Darker,Arc-Red-Dark}
-  cd /ui/Theme/arc-theme-Red/
+  cd ./ui/Theme/
+  git clone https://github.com/arc-design/arc-theme --depth 1 
+  cd arc-theme/
   ./autogen.sh --prefix=/usr
   sudo make install
-  echo "[#] Setting ${bold}arc Icon${norm} ..."
-  cd ../../../ui/Icon/arc-icon-theme/
+  echo "[!] Setting ${bold}arc Icon${norm} ..."
+  cd ../../Icon
+  git clone https://github.com/horst3180/arc-icon-theme --depth 1
+  cd arc-icon-theme/
   ./autogen.sh --prefix=/usr
   sudo make install
   cd ../../../
 }
 SettingVim(){
-  echo "[#] Getting ${bold}Vim${norm} pluging ..."
+  echo "[!] Getting ${bold}Vim${norm} pluging ..."
   if [ ! -d ./data/vim/bundle/vundle ]; then
     git clone http://github.com/gmarik/vundle.git ./data/vim/bundle/vundle
   fi
@@ -45,24 +56,35 @@ SettingVim(){
   git clone https://github.com/ryanoasis/vim-devicons ~/.vim/bundle/vim-devicons
   git clone https://github.com/fatih/vim-go ~/.vim/bundle/vim-go
   git clone https://github.com/terryma/vim-multiple-cursors ~/.vim/bundle/vim-multiple-cursors
-  vim +BundleInstall +GoInstallBinaries +qa
 }
 GettingGO(){
-  echo "[#] Installing ${bold}GO${norm} ..."
+  echo "[!] Installing ${bold}GO${norm} ..."
   GOURL=$(curl -s https://golang.org/dl/ | grep "download downloadBox" | grep "linux" | awk -F '"' '{print $4}')
   wget -c "${GOURL}" -O "$(basename ${GOURL})"
   sudo tar -C /usr/local -xzf $(basename "${GOURL}")
   rm -f $(basename "${GOURL}")
 }
-echo "[#] sudo apt install ${bold}${PACKAGES[*]}${norm} -y"
-read 
+
+echo "[!] Do you want to install these packages: [${bold}${PACKAGES[*]}${norm}]? y/(*):"
+read choice
+if (( "$choice" == "y" )); then
+    sudo apt install ${PACKAGES[*]}
+else
+    echo "[!] Skipping..."
+fi
+
 chsh -s /usr/bin/zsh
-SettingVim
+
 SettingThemeAndIcons
+SettingVim
+GettingGO
+
+echo "[#] Linking ${bold}Dots${norm}"
+
 for file in data/*
 do
     echo "[#] Linking ${file} to ${bold}~/.$(basename $file)${norm} ..."
     rm -rf ~/.$(basename "${file}")
     ln -s $(pwd)/"${file}" ~/.$(basename "${file}")
 done
-GettingGO
+vim +BundleInstall +GoInstallBinaries +qa
