@@ -2,3 +2,4 @@ data/vim/swap/*.*
 .Trashes
 ./ui/Icon
 ./ui/Theme
+./data/vim/bundle/
