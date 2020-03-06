@@ -1,2 +1,4 @@
 data/vim/swap/*.*
 .Trashes
+./ui/Icon
+./ui/Theme
