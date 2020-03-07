@@ -14,7 +14,6 @@ alias exgrep='grep --exclude-dir={node_modules,dist}'
 alias endbep='beep -f 1000 -n -f 2000 -n -f 1500 -n -f 1000'
 
 ##### Tool
-alias hashcat='~/Tool/hashcat/hashcat'
 alias jadx='~/Tool/jadx/build/jadx/bin/jadx-gui ~/Tool/jadx/build/jadx/lib/jadx-core-*.jar'
 alias searchsploit='~/Tool/exploit-database/searchsploit'
 alias johntr='~/Tool/john-1.8.0/run/john'
