@@ -11,7 +11,8 @@ local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 HOST=$(hostname -s)
 #HOSTNAME=$(whoami)
 #
-PROMPT='$(virtualenv_prompt_info)%{$fg_bold[red]%}% $USER%{$fg[yellow]%}:⚡%{$fg[green]%}%c$(git_prompt_info)%{$fg[red]%}%(!.#.$)%{$reset_color%} '
+#PROMPT='$(virtualenv_prompt_info)%{$fg_bold[red]%}% [~]%{$fg[yellow]%}:⚡%{$fg[green]%}[%c]$(git_prompt_info)%{$fg[red]%}%(!.#.$)%{$reset_color%} '
+PROMPT='$(virtualenv_prompt_info)%{$fg_bold[red]%}%{$fg[red]%}[%c]::$(git_prompt_info)%{$fg[red]%}%(!.#.$)%{$reset_color%} '
 PROMPT2='%{$fg[red]%}\%{$reset_color%}'
 RPS1='%{$fg[yellow]%}%~%{$reset_color%} ${return_code} '
 
@@ -40,3 +41,4 @@ cheat(){curl "http://cheat.sh/$1"}
 # tabtab source for electron-forge package
 # uninstall by removing these lines or running `tabtab uninstall electron-forge`
 [[ -f /home/fauxcon/Workspace/nodejs/uuider/node_modules/tabtab/.completions/electron-forge.zsh ]] && . /home/fauxcon/Workspace/nodejs/uuider/node_modules/tabtab/.completions/electron-forge.zsh
+export PATH=/home/virtualstruct/.rvm/gems/ruby-2.6.5@metasploit-framework/bin:/home/virtualstruct/.rvm/gems/ruby-2.6.5@global/bin:/home/virtualstruct/.rvm/rubies/ruby-2.6.5/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/virtualstruct/dotfiles/bin:/home/virtualstruct/.local/bin:/home/virtualstruct/tools/ida/idafree-7.0:/home/virtualstruct/.config/composer/vendor/bin:/usr/local/go/bin:/home/virtualstruct/go/bin:/home/virtualstruct/dotfiles/bin:/home/virtualstruct/.local/bin:/home/virtualstruct/tools/ida/idafree-7.0:/home/virtualstruct/.config/composer/vendor/bin:/usr/local/go/bin:/home/virtualstruct/go/bin:/home/virtualstruct/.rvm/bin:/usr/lib/postgresql/11/bin
