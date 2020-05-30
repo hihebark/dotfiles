@@ -12,6 +12,8 @@ alias poopush='git add . && git commit -m "small fixes or logging..." && git pus
 alias scanoid='ip neigh | grep -v "FAILED"'
 alias exgrep='grep --exclude-dir={node_modules,dist}'
 alias endbep='beep -f 1000 -n -f 2000 -n -f 1500 -n -f 1000'
+alias git-tree-line='git log --graph --decorate --oneline'
+alias souris='sudo rmmod i2c_hid && sudo modprobe i2c_hid'
 
 ##### Tool
 alias jadx='~/tools/jadx/build/jadx/bin/jadx-gui ~/tools/jadx/build/jadx/lib/jadx-core-*.jar'
