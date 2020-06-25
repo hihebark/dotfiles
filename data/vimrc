@@ -41,7 +41,7 @@ set undodir=~/.vim/undo/
 set t_Co=256
 " set theme
 set background=dark
-colorscheme OceanicNext
+colorscheme hybrid
 "colorscheme onehalfdark
 if exists('+termguicolors')
     let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
@@ -203,9 +203,9 @@ Bundle 'ryanoasis/vim-devicons'
 " A much better statusline
 Bundle 'Lokaltog/vim-powerline'
     " Use unicode symbols in powerline
-    let g:Powerline_symbols = 'fancy'
+    "let g:Powerline_symbols = 'fancy'
     " For devicons
-    let g:airline_powerline_fonts = 1
+    "let g:airline_powerline_fonts = 1
 
 " Vim for Go
 Bundle 'fatih/vim-go'
@@ -321,6 +321,16 @@ let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 "
 " FUNCTIONS
 "
+
+" get git branch https://shapeshed.com/vim-statuslines/
+function! GitBranch()
+    return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+endfunction
+
+function! StatuslineGit()
+    let l:branchname = GitBranch()
+    return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
+endfunction
 
 " http://vim.wikia.com/wiki/VimTip102
 function! Smart_TabComplete()
