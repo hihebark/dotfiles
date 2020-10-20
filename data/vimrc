@@ -259,6 +259,8 @@ let g:ycm_enable_diagnostic_highlighting = 0" Don't show YCM's preview
 " window [ I find it really annoying ]
 set completeopt-=preview
 let g:ycm_add_preview_to_completeopt = 0
+" Add enter as binding for the ctrl+Y
+let g:ycm_key_list_stop_completion = ['<C-y>', '<CR>']
 
 " Plugin key-mappings.
 
