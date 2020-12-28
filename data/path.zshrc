@@ -7,4 +7,5 @@ export PATH="$PATH:$HOME/tools/beef/beef"
 export MSF_DATABASE_CONFIG=/opt/metasploit-framework/config/database.yml
 # Composer bin path
 export PATH="$PATH:$HOME/.config/composer/vendor/bin"
+export ANDROID_HOME="$HOME/Android/Sdk"
 export CAPSPATH="~/ShityShity/utils/caplets"
