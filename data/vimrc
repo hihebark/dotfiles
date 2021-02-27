@@ -198,7 +198,7 @@ Bundle 'octref/RootIgnore'
 
 " GIT support for NERDTree
 Bundle 'Xuyuanp/nerdtree-git-plugin'
-    let g:NERDTreeIndicatorMapCustom = {
+    let g:NERDTreeGitStatusIndicatorMapCustom = {
         \ "Modified"  : "✹",
         \ "Staged"    : "✚",
         \ "Untracked" : "✭",

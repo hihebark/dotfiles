@@ -1,7 +1,7 @@
 ##### utils
 alias lsla='ls -lah'
 alias wtfismyip='curl -s wtfismyip.com/json'
-alias getprocess='ps aux | grep $1'
+alias getprocess='ps aux | grep -v grep | grep $1'
 alias startapache='sudo /opt/lampp/xampp startapache && sudo /opt/lampp/xampp startmysql'
 alias stopapache='sudo /opt/lampp/xampp stop'
 alias wgetc='wget -c $1'
@@ -15,6 +15,7 @@ alias endbep='beep -f 1000 -n -f 2000 -n -f 1500 -n -f 1000'
 alias git-tree-line='git log --graph --decorate --oneline'
 alias souris='sudo rmmod i2c_hid && sudo modprobe i2c_hid'
 alias zabf='sudo sync && echo 3 | sudo tee /proc/sys/vm/drop_caches'
+alias gvimdiff='git difftool --tool=vimdiff'
 
 ##### Tool
 alias jadx='~/tools/jadx/build/jadx/bin/jadx-gui ~/tools/jadx/build/jadx/lib/jadx-core-*.jar'
