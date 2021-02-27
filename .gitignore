@@ -1,5 +1,6 @@
-data/vim/swap/*.*
 .Trashes
 ./ui/Icon
 ./ui/Theme
 ./data/vim/bundle/
+data/vim/view/
+data/vim/swap/*.*
