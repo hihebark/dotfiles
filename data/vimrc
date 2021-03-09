@@ -222,9 +222,9 @@ Bundle 'ryanoasis/vim-devicons'
 " A much better statusline
 Bundle 'Lokaltog/vim-powerline'
     " Use unicode symbols in powerline
-    "let g:Powerline_symbols = 'fancy'
+    let g:Powerline_symbols = 'fancy'
     " For devicons
-    "let g:airline_powerline_fonts = 1
+    let g:airline_powerline_fonts = 1
 
 " Vim for Go
 Bundle 'fatih/vim-go'
