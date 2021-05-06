@@ -16,6 +16,7 @@ alias git-tree-line='git log --graph --decorate --oneline'
 alias souris='sudo rmmod i2c_hid && sudo modprobe i2c_hid'
 alias zabf='sudo sync && echo 3 | sudo tee /proc/sys/vm/drop_caches'
 alias gvimdiff='git difftool --tool=vimdiff'
+alias prune_remote='git branch --merged >/tmp/merged-branches && vi /tmp/merged-branches && xargs git branch -d </tmp/merged-branches'
 
 ##### Tool
 alias jadx='~/tools/jadx/build/jadx/bin/jadx-gui ~/tools/jadx/build/jadx/lib/jadx-core-*.jar'
