@@ -35,8 +35,8 @@ set backupdir=~/.vim/backup/
 set directory=~/.vim/swap/
 set undodir=~/.vim/undo/
 " Enable list
-set listchars=eol:↴,tab:>·,trail:~,extends:>,precedes:<,space:·
-set list
+"set listchars=eol:↴,tab:>·,trail:~,extends:>,precedes:<,space:·
+"set list
 " Force terminal to 256 colors
 set t_Co=256
 " set theme
@@ -261,9 +261,6 @@ Bundle 'moll/vim-node'
 "let g:ycm_add_preview_to_completeopt = 0
 "" Add enter as binding for the ctrl+Y
 "let g:ycm_key_list_stop_completion = ['<C-y>', '<CR>']
-
-Bundle 'Yggdroot/indentLine'
-    let g:indentLine_char = '¦'
 
 " Plugin key-mappings.
 
