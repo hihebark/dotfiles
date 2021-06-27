@@ -18,6 +18,7 @@ alias zabf='sudo sync && echo 3 | sudo tee /proc/sys/vm/drop_caches'
 alias gvimdiff='git difftool --tool=vimdiff'
 alias prune_remote='git branch --merged >/tmp/merged-branches && vi /tmp/merged-branches && xargs git branch -d </tmp/merged-branches'
 alias pvm='sudo update-alternatives --config php'
+alias xcp='xclip -sel clip'
 
 ##### Tool
 alias jadx='~/tools/jadx/build/jadx/bin/jadx-gui ~/tools/jadx/build/jadx/lib/jadx-core-*.jar'
