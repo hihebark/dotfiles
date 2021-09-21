@@ -21,7 +21,7 @@ alias pvm='sudo update-alternatives --config php'
 alias xcp='xclip -sel clip'
 
 ##### Tool
-alias jadx='~/tools/jadx/build/jadx/bin/jadx-gui ~/tools/jadx/build/jadx/lib/jadx-core-*.jar'
+# alias jadx='~/tools/jadx/build/jadx/bin/jadx-gui ~/tools/jadx/build/jadx/lib/jadx-core-*.jar'
 alias johntr='~/tools/john-1.8.0/run/john'
 alias sqlmap='python ~/tools/sqlmap-dev/sqlmap.py'
 alias nikto='perl ~/tools/nikto/program/nikto.pl'

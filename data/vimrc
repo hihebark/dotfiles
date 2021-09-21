@@ -251,6 +251,16 @@ Bundle 'pangloss/vim-javascript'
 
 Bundle 'moll/vim-node'
 
+Bundle 'vim-syntastic/syntastic'
+    set statusline+=%#warningmsg#
+    set statusline+=%{SyntasticStatuslineFlag()}
+    set statusline+=%*
+
+    let g:syntastic_always_populate_loc_list = 1
+    let g:syntastic_auto_loc_list = 1
+    let g:syntastic_check_on_open = 1
+    let g:syntastic_check_on_wq = 0
+
 "Bundle 'ycm-core/YouCompleteMe'
 "" Start autocompletion after 4 chars
 "let g:ycm_min_num_of_chars_for_completion = 4
