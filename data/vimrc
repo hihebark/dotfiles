@@ -261,16 +261,16 @@ Bundle 'vim-syntastic/syntastic'
     let g:syntastic_check_on_open = 1
     let g:syntastic_check_on_wq = 0
 
-"Bundle 'ycm-core/YouCompleteMe'
-"" Start autocompletion after 4 chars
-"let g:ycm_min_num_of_chars_for_completion = 4
-"let g:ycm_min_num_identifier_candidate_chars = 4
-"let g:ycm_enable_diagnostic_highlighting = 0" Don't show YCM's preview
-"" window [ I find it really annoying ]
-"set completeopt-=preview
-"let g:ycm_add_preview_to_completeopt = 0
-"" Add enter as binding for the ctrl+Y
-"let g:ycm_key_list_stop_completion = ['<C-y>', '<CR>']
+Bundle 'ycm-core/YouCompleteMe'
+    " Start autocompletion after 4 chars
+    let g:ycm_min_num_of_chars_for_completion = 4
+    let g:ycm_min_num_identifier_candidate_chars = 4
+    let g:ycm_enable_diagnostic_highlighting = 0" Don't show YCM's preview
+    " window [ I find it really annoying ]
+    set completeopt-=preview
+    let g:ycm_add_preview_to_completeopt = 0
+    " Add enter as binding for the ctrl+Y
+    let g:ycm_key_list_stop_completion = ['<C-y>', '<CR>']
 
 " Plugin key-mappings.
 
