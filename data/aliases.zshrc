@@ -6,7 +6,7 @@ alias startapache='sudo /opt/lampp/xampp startapache && sudo /opt/lampp/xampp st
 alias stopapache='sudo /opt/lampp/xampp stop'
 alias wgetc='wget -c $1'
 alias ytdlmp3='youtube-dl --extract-audio --audio-format mp3 $1'
-alias aptgrad='sudo apt update && sudo apt upgrade'
+alias aptgrad='sudo apt update && sudo apt upgrade && sudo apt --purge autoremove && sudo apt clean'
 alias tmux='TERM=screen-256color-bce tmux'
 alias poopush='git commit -m "Small fix i did not bother commenting..."'
 alias scanoid='ip neigh | grep -v "FAILED"'
