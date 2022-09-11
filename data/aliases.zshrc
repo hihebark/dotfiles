@@ -10,7 +10,7 @@ alias aptgrad='sudo apt update && sudo apt upgrade && sudo apt --purge autoremov
 alias tmux='TERM=screen-256color-bce tmux'
 alias poopush='git commit -m "Small fix i did not bother commenting..."'
 alias scanoid='ip neigh | grep -v "FAILED"'
-alias exgrep='grep --exclude-dir={node_modules,dist,vendor}'
+alias exgrep='grep --exclude-dir={node_modules,dist,vendor,storage}'
 alias endbep='beep -f 1000 -n -f 2000 -n -f 1500 -n -f 1000'
 alias git-tree-line='git log --graph --decorate --oneline'
 alias souris='sudo rmmod i2c_hid && sudo modprobe i2c_hid'
