@@ -20,6 +20,7 @@ alias prune_remote='git branch --merged >/tmp/merged-branches && vi /tmp/merged-
 alias pvm='sudo update-alternatives --config php'
 alias xcp='xclip -sel clip'
 alias sail="[ -f sail ] && sh sail || bash vendor/bin/sail"
+alias docker_stop_all="docker ps -aq | xargs docker stop"
 
 ##### Tool
 # alias jadx='~/tools/jadx/build/jadx/bin/jadx-gui ~/tools/jadx/build/jadx/lib/jadx-core-*.jar'
