@@ -272,6 +272,7 @@ Bundle 'ycm-core/YouCompleteMe'
     " Add enter as binding for the ctrl+Y
     let g:ycm_key_list_stop_completion = ['<C-y>', '<CR>']
 
+Bundle 'prettier/vim-prettier'
 " Plugin key-mappings.
 
 " Recommended key-mappings.
