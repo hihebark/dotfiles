@@ -209,6 +209,8 @@ Bundle 'Xuyuanp/nerdtree-git-plugin'
         \ "Clean"     : "✔︎",
         \ "Unknown"   : "?"
         \ }
+    let g:NERDTreeShowHidden = 1
+    let g:NERDTreeIgnore = ['.DS_Store', '.cache$', 'node_modules$', '.git$', 'debug$', '\~$']
 
 " Icons!
 " Install this and then set a terminal font
@@ -273,6 +275,8 @@ Bundle 'ycm-core/YouCompleteMe'
     let g:ycm_key_list_stop_completion = ['<C-y>', '<CR>']
 
 Bundle 'prettier/vim-prettier'
+    let g:prettier#exec_cmd_path = "/home/virtualstruct/.nvm/versions/node/v16.14.2/bin/prettier"
+
 " Plugin key-mappings.
 
 " Recommended key-mappings.
