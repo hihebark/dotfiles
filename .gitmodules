@@ -1,3 +1,6 @@
 [submodule "data/vim/data/vim/bundle/indentLine"]
 	path = data/vim/data/vim/bundle/indentLine
 	url = https://github.com/Yggdroot/indentLine
+[submodule "data/vim/bundle/vim-prettier"]
+	path = data/vim/bundle/vim-prettier
+	url = https://github.com/prettier/vim-prettier

@@ -21,6 +21,7 @@ alias pvm='sudo update-alternatives --config php'
 alias xcp='xclip -sel clip'
 alias sail="[ -f sail ] && sh sail || bash vendor/bin/sail"
 alias docker_stop_all="docker ps -aq | xargs docker stop"
+alias exrnis="grep --exclude-dir={node_modules,dist,vendor,storage} -rnis"
 
 ##### Tool
 # alias jadx='~/tools/jadx/build/jadx/bin/jadx-gui ~/tools/jadx/build/jadx/lib/jadx-core-*.jar'
