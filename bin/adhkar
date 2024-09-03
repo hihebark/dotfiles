@@ -1,0 +1,1 @@
+shuf -n 1 ~/dotfiles/bin/adhkar_lists.txt
