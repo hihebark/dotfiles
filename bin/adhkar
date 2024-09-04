@@ -1,1 +1,3 @@
-shuf -n 1 ~/dotfiles/bin/adhkar_lists.txt
+COLUMNS=140
+title=$(shuf -n 1 ~/dotfiles/bin/adhkar_lists.txt)
+printf "%*s\n" $(((${#title}+$COLUMNS)/2)) "$title"
