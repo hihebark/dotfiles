@@ -1,0 +1,23 @@
+#!/bin/bash
+
+SALAT_DATA=$(curl -s "https://api.aladhan.com/v1/timingsByCity/12-09-2024?city=khenchela&country=dz&method=19")
+
+if [[ $(echo $SALAT_DATA | jq -r '.status') == "OK" ]]
+then
+    SALAT_NAMES=("Fajr" "Dhuhr" "Asr" "Maghrib" "Isha")
+    SALATS=$(echo $SALAT_DATA | jq -r '.data.timings')
+    NOW=$(date "+%s")
+    NEXT_ADHAN=""
+    for s in ${SALAT_NAMES[@]}; do
+        TIME=$(echo $SALATS | jq -r '.'$s)
+        TIMESTAMP=$(date --date="$TIME" '+%s')
+        if [ "$NOW" -le "$TIMESTAMP" ]; then
+            NEXT_ADHAN="$s $TIME"
+            break
+        fi
+    done
+    echo "Next prayer: $NEXT_ADHAN 🕋"
+else
+    echo "Check connection"
+fi
+
