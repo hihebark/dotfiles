@@ -12,11 +12,12 @@ then
         TIME=$(echo $SALATS | jq -r '.'$s)
         TIMESTAMP=$(date --date="$TIME" '+%s')
         if [ "$NOW" -le "$TIMESTAMP" ]; then
-            NEXT_ADHAN="$s $TIME"
+            NEXT_ADHAN="$s ~ $TIME"
             break
         fi
     done
-    echo "Next prayer: $NEXT_ADHAN 🕋"
+    DIFF="$(($TIMESTAMP-$NOW))"
+    echo "Next prayer: $NEXT_ADHAN 🕋 | ~ $(date -d@${DIFF} -u +%H:%M:%S) left"
 else
     echo "Check connection"
 fi
