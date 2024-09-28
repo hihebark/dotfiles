@@ -17,7 +17,7 @@ then
         fi
     done
     DIFF="$(($TIMESTAMP-$NOW))"
-    echo "Next prayer: $NEXT_ADHAN 🕋 | ~ $(date -d@${DIFF} -u +%H:%M:%S) left"
+    echo "Next prayer: $NEXT_ADHAN 🕋 | ~ $(date -d@${DIFF} -u +%H:%M) left"
 else
     echo "Check connection"
 fi
