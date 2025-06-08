@@ -141,6 +141,7 @@ autocmd Filetype cpp setlocal ts=2 sts=2 sw=2
 autocmd Filetype python setlocal foldmethod=indent
 " go
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4 
+autocmd BufNewFile,BufRead *.blade.php set filetype=html
 
 augroup vimrc_autocmds
     autocmd!
@@ -277,7 +278,10 @@ Bundle 'ycm-core/YouCompleteMe'
     let g:ycm_key_list_stop_completion = ['<C-y>', '<CR>']
 
 Bundle 'prettier/vim-prettier'
-    let g:prettier#exec_cmd_path = "/home/virtualstruct/.nvm/versions/node/v16.14.2/bin/prettier"
+    let g:prettier#exec_cmd_path = "/home/virtualstruct/.nvm/versions/node/v18.20.6/bin/prettier"
+
+Bundle 'airblade/vim-gitgutter'
+    let g:gitgutter_highlight_lines = 1
 
 " Plugin key-mappings.
 
