@@ -281,7 +281,7 @@ Bundle 'prettier/vim-prettier'
     let g:prettier#exec_cmd_path = "/home/virtualstruct/.nvm/versions/node/v18.20.6/bin/prettier"
 
 Bundle 'airblade/vim-gitgutter'
-    let g:gitgutter_highlight_lines = 1
+    let g:gitgutter_highlight_lines = 0
 
 " Plugin key-mappings.
 
