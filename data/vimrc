@@ -108,6 +108,8 @@ map <C-right> :tabn<cr>
 nmap <silent> <C-D> :shell<CR>
 " ctrl+a selects all.
 noremap <C-a> ggVG<CR>
+" ctrl+c clear comment.
+noremap <C-c> :%s/\/\/ .*//g<CR>
 " By pressing ctrl+r in the visual mode you will be prompted to enter text to replace with.
 " Press enter and then confirm each change you agree with 'y' or decline with 'n'.
 " This command will override your register 'h' so you can choose other one
