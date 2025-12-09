@@ -22,6 +22,7 @@ alias xcp='xclip -sel clip'
 alias sail="[ -f sail ] && sh sail || bash vendor/bin/sail"
 alias docker_stop_all="docker ps -aq | xargs docker stop"
 alias exrnis="grep --exclude-dir={node_modules,dist,vendor,storage} -rnis"
+alias virtual_env="python3 -m venv venv && source venv/bin/activate"
 
 ##### Tool
 # alias jadx='~/tools/jadx/build/jadx/bin/jadx-gui ~/tools/jadx/build/jadx/lib/jadx-core-*.jar'
@@ -34,3 +35,4 @@ alias gorss='/home/virtualstruct/tools/gorss/gorss'
 alias ducks='du -cks -- * | sort -rn | head'
 alias larastan='phpstan analyse $(git status --porcelain | awk "{print \$2}")'
 alias uprettier='prettier --write $(git status --porcelain | awk "{print \$2}")'
+alias pint='./vendor/bin/pint'

@@ -116,6 +116,9 @@ noremap <C-c> :%s/\/\/ .*//g<CR>
 " ( by changing 'h' in the command above to other lower case letter ) that you don't use.
 vnoremap <C-r> "hy:%s/<C-r>h//g<left><left>
 
+" Mapping to run the pint formatter manually in normal mode for the current PHP file
+nnoremap <buffer> \f :silent !./vendor/bin/pint --quiet % >/dev/null 2>&1 &<CR>
+
 " reload files as they change
 set autoread
 augroup checktime
@@ -418,7 +421,7 @@ function! s:CloseIfOnlyNerdTreeLeft()
       endif
     endif
   endif
-endfunction   
+endfunction
 
 " https://coderwall.com/p/if9mda/automatically-set-paste-mode-in-vim-when-pasting-in-insert-mode
 function! WrapForTmux(s)
