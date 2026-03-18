@@ -1,3 +1,2 @@
-COLUMNS=140
-title=$(shuf -n 1 ~/dotfiles/bin/adhkar_lists.txt)
-printf "%*s\n" $(((${#title}+$COLUMNS)/2)) "$title"
+#!/bin/sh
+grep -v '^[[:space:]]*$' "$HOME/dotfiles/bin/adhkar_lists.txt" | shuf -n 1

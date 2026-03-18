@@ -1,6 +1,5 @@
+set nocompatible               " be iMproved
 syntax on
-filetype indent on
-filetype plugin on
 
 set hidden
 set history=10000
@@ -21,7 +20,8 @@ set number
 set numberwidth=5
 set backspace=indent,eol,start
 set showcmd                    " display incomplete commands
-set nocompatible               " be iMproved
+set wildmenu
+set wildmode=list:longest
 set fileformats=unix,dos,mac   " support all three, in this order
 set foldmethod=syntax
 set foldlevel=7
@@ -38,6 +38,7 @@ set arabicshape!
 set backupdir=~/.vim/backup/
 set directory=~/.vim/swap/
 set undodir=~/.vim/undo/
+set undofile
 " Enable list
 "set listchars=eol:↴,tab:>·,trail:~,extends:>,precedes:<,space:·
 "set list
@@ -59,9 +60,7 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 " nodejs
 set runtimepath^=~/.vim/bundle/node
 
-" http://vim.wikia.com/wiki/VimTip102
 set omnifunc=syntaxcomplete#Complete
-inoremap <tab> <c-r>=Smart_TabComplete()<CR>
 
 " Clear highlighting on escape in normal mode
 nnoremap <esc> :noh<return><esc>
@@ -104,11 +103,9 @@ endif
 " ctrl+w close current tab
 " ctrl+arrows navigate tabs
 map <C-t> :tabnew<cr>
-map <C-w> :tabclose<cr>
+nmap <C-w> :tabclose<cr>
 map <C-left> :tabp<cr>
 map <C-right> :tabn<cr>
-" ctrl+d open a shell.
-nmap <silent> <C-D> :shell<CR>
 " ctrl+a selects all.
 noremap <C-a> ggVG<CR>
 " ctrl+c clear comment.
@@ -120,7 +117,7 @@ noremap <C-c> :%s/\/\/ .*//g<CR>
 vnoremap <C-r> "hy:%s/<C-r>h//g<left><left>
 
 " Mapping to run the pint formatter manually in normal mode for the current PHP file
-nnoremap <buffer> \f :silent !./vendor/bin/pint --quiet % >/dev/null 2>&1 &<CR>
+autocmd FileType php nnoremap <buffer> \f :silent !./vendor/bin/pint --quiet % >/dev/null 2>&1 &<CR>
 
 " reload files as they change
 set autoread
@@ -132,9 +129,6 @@ augroup checktime
         autocmd BufEnter        * silent! checktime
         autocmd CursorHold      * silent! checktime
         autocmd CursorHoldI     * silent! checktime
-        "these two _may_ slow things down. Remove if they do.
-        autocmd CursorMoved     * silent! checktime
-        autocmd CursorMovedI    * silent! checktime
     endif
 augroup END
 
@@ -170,7 +164,6 @@ augroup filetypedetect
     au BufRead,BufNewFile *.hbs setlocal filetype=html
 augroup END
 
-set nocompatible              " Required
 filetype off                  " Required
 
 " Initialize vundle runtime
@@ -203,8 +196,6 @@ Bundle 'scrooloose/nerdtree'
     let NERDTreeChDirMode = 2
     " Single click to open files and expand folders.
     let NERDTreeMouseMode = 3
-    " Display hidden files
-    let NERDTreeShowHidden=1
     " Do not display these files
     " let NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp']
     let NERDTreeMinimalUI = 1
@@ -277,7 +268,7 @@ Bundle 'ycm-core/YouCompleteMe'
     " Start autocompletion after 4 chars
     let g:ycm_min_num_of_chars_for_completion = 4
     let g:ycm_min_num_identifier_candidate_chars = 4
-    let g:ycm_enable_diagnostic_highlighting = 0" Don't show YCM's preview
+    let g:ycm_enable_diagnostic_highlighting = 0  " Don't show YCM diagnostics
     " window [ I find it really annoying ]
     set completeopt-=preview
     let g:ycm_add_preview_to_completeopt = 0
@@ -306,60 +297,6 @@ endfunction
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
-" neocomplete.vim
-" Note: This option must be set in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
-"
-" Disable AutoComplPop.
-" let g:acp_enableAtStartup = 0
-" " Use neocomplete.
-" let g:neocomplete#enable_at_startup = 1
-" " Use smartcase.
-" let g:neocomplete#enable_smart_case = 1
-" " Set minimum syntax keyword length.
-" let g:neocomplete#sources#syntax#min_keyword_length = 3
-" 
-" " Define dictionary.
-" let g:neocomplete#sources#dictionary#dictionaries = {
-"     \ 'default' : '',
-"     \ 'vimshell' : $HOME.'/.vimshell_hist',
-"     \ 'scheme' : $HOME.'/.gosh_completions'
-"         \ }
-" 
-" " Define keyword.
-" if !exists('g:neocomplete#keyword_patterns')
-"     let g:neocomplete#keyword_patterns = {}
-" endif
-" let g:neocomplete#keyword_patterns['default'] = '\h\w*'
-" 
-" " Plugin key-mappings.
-" inoremap <expr><C-g>     neocomplete#undo_completion()
-" inoremap <expr><C-l>     neocomplete#complete_common_string()
-" 
-" " Recommended key-mappings.
-" " <CR>: close popup and save indent.
-" inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-" function! s:my_cr_function()
-"   return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
-"   " For no inserting <CR> key.
-"   "return pumvisible() ? "\<C-y>" : "\<CR>"
-" endfunction
-" <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-" <C-h>, <BS>: close popup and delete backword char.
-"inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-"inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-" Close popup by <Space>.
-"inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
-
-" AutoComplPop like behavior.
-"let g:neocomplete#enable_auto_select = 1
-
-" Shell like behavior(not recommended).
-"set completeopt+=longest
-"let g:neocomplete#enable_auto_select = 1
-"let g:neocomplete#disable_auto_complete = 1
-"inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
-
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
@@ -367,54 +304,9 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
-" Enable heavy omni completion.
-if !exists('g:neocomplete#sources#omni#input_patterns')
-  let g:neocomplete#sources#omni#input_patterns = {}
-endif
-let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
- 
-" " For perlomni.vim setting.
-" " https://github.com/c9s/perlomni.vim
-" let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
-
 "
 " FUNCTIONS
 "
-
-" get git branch https://shapeshed.com/vim-statuslines/
-function! GitBranch()
-    return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
-endfunction
-
-function! StatuslineGit()
-    let l:branchname = GitBranch()
-    return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
-endfunction
-
-" http://vim.wikia.com/wiki/VimTip102
-function! Smart_TabComplete()
-  let line = getline('.')                         " current line
-
-  let substr = strpart(line, -1, col('.'))        " from the start of the current
-                                                  " line to one character on
-                                                  " the cursor
-  let substr = matchstr(substr, "[^ \t]*$")       " word till cursor
-  if (strlen(substr)==0)                          " nothing to match on empty string
-    return "\<tab>"
-  endif
-  let has_period = match(substr, '\.') != -1      " position of period, if any
-  let has_slash = match(substr, '\/') != -1       " position of slash, if any
-  if (!has_period && !has_slash)
-    return "\<C-X>\<C-P>"                         " existing text matching
-  elseif ( has_slash )
-    return "\<C-X>\<C-F>"                         " file matching
-  else
-    return "\<C-X>\<C-O>"                         " plugin matching
-  endif
-endfunction
-
 
 " Close all open buffers on entering a window if the only
 " buffer that's left is the NERDTree buffer

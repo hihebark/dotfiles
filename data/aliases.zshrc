@@ -1,11 +1,11 @@
 ##### utils
 alias lsla='ls -lah'
 alias wtfismyip='curl -s wtfismyip.com/json'
-alias getprocess='ps aux | grep -v grep | grep $1'
+getprocess() { ps aux | grep -v grep | grep "$1"; }
 alias startapache='sudo /opt/lampp/xampp startapache && sudo /opt/lampp/xampp startmysql'
 alias stopapache='sudo /opt/lampp/xampp stop'
-alias wgetc='wget -c $1'
-alias ytdlmp3='youtube-dl --extract-audio --audio-format mp3 $1'
+wgetc() { wget -c "$1"; }
+ytdlmp3() { youtube-dl --extract-audio --audio-format mp3 "$1"; }
 alias aptgrad='sudo apt update && sudo apt upgrade && sudo apt --purge autoremove && sudo apt clean'
 alias tmux='TERM=screen-256color-bce tmux'
 alias poopush='git commit -m "Small fix i did not bother commenting..."'
