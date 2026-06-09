@@ -1,11 +1,8 @@
 ##### utils
 alias lsla='ls -lah'
 alias wtfismyip='curl -s wtfismyip.com/json'
-getprocess() { ps aux | grep -v grep | grep "$1"; }
 alias startapache='sudo /opt/lampp/xampp startapache && sudo /opt/lampp/xampp startmysql'
 alias stopapache='sudo /opt/lampp/xampp stop'
-wgetc() { wget -c "$1"; }
-ytdlmp3() { youtube-dl --extract-audio --audio-format mp3 "$1"; }
 alias aptgrad='sudo apt update && sudo apt upgrade && sudo apt --purge autoremove && sudo apt clean'
 alias tmux='TERM=screen-256color-bce tmux'
 alias poopush='git commit -m "Small fix i did not bother commenting..."'
@@ -23,6 +20,7 @@ alias sail="[ -f sail ] && sh sail || bash vendor/bin/sail"
 alias docker_stop_all="docker ps -aq | xargs docker stop"
 alias exrnis="grep --exclude-dir={node_modules,dist,vendor,storage} -rnis"
 alias virtual_env="python3 -m venv venv && source venv/bin/activate"
+alias clode='CLAUDE_CONFIG_DIR=~/.claude-me claude'
 
 ##### Tool
 # alias jadx='~/tools/jadx/build/jadx/bin/jadx-gui ~/tools/jadx/build/jadx/lib/jadx-core-*.jar'

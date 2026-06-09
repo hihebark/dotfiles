@@ -4,3 +4,4 @@
 ./data/vim/bundle/
 data/vim/view/
 data/vim/swap/*.*
+data/vim/undo/*.*
